@@ -4,13 +4,13 @@ name: Tabs.js
 description: Handles the scripting for a common UI layout; the tabbed box. 
 authors: Shaun Freeman
 requires:
-    core/1.2.4
+    core/1.2.4:
     - Selectors
     - DomReady
     - HTML.Request
-    more/1.2.4
+    more/1.2.4:
     - URI
-    elementswap/1.0
+    elementswap/1.0:
     - ElementSwap
 provides: [Tabs]
 license: MIT-style license
