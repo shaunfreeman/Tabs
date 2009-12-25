@@ -1,16 +1,18 @@
 /*
 ---
 name: ElementSwap.js
-description: Slide show interface for classes.
+description: Slide show interface to swap between any group of elements.
 authors: Shaun Freeman
 requires:
-    core/1.2.4
+    core/1.2.4:
     - Class
     - Class.Extras
     - Element
+    - Element.Event
+    - Selectors
 provides: [ElementSwap]
 license: MIT-style license
-version: 1.0
+version: 1.0.1
 ...
 */
 
@@ -46,9 +48,7 @@ var ElementSwap = new Class({
 			'class': this.options.panelWrapClass
 		}).inject(this.slides[0], 'before').adopt(this.slides);
 		
-		if($type(this.options.activateOnLoad) == 'number') {
-			this.activate(this.options.activateOnLoad);
-		}
+		this.activate(this.options.activateOnLoad);
 		
 		if (this.options.autoPlay) this.start();
 	},
@@ -75,10 +75,13 @@ var ElementSwap = new Class({
 	},
 	
 	activate: function(index) {
+		if ($type(index) == 'string') index = this.slides.indexOf(this.slides.filter('[id='+index+']')[0]);
+		if ($type(index) != 'number') return;
 		this.show(index);
 	},
 	
  	show: function(index) {
+		if ($type(index) != 'number') return;
 		this.now = index;
 		this.slides.removeClass(this.options.selectedClass);
 		this.slides[this.now].addClass(this.options.selectedClass);

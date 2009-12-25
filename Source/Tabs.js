@@ -73,7 +73,7 @@ var Tabs = new Class({
 		this.now = index;
 		this.tabs.removeClass(this.options.selectedClass);
 		this.tabs[this.elSwap.now].addClass(this.options.selectedClass);
-		this.fireEvent('onActive', [this.tabs[this.now], index]);
+		this.fireEvent('onActive', [index, this.tabs[this.now]]);
 		return this;
 	},
 	
