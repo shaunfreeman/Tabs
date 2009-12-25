@@ -121,7 +121,7 @@ How to use
 		margin-left:5px;
 	}
 
-#HTML
+### HTML 
 
 	#HTML
 	<div id="tabs">
