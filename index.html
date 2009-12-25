@@ -4,7 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
+	 <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+	<script src="http://github.com/vincentbluff/ElementSwap/raw/master/Source/ElementSwap.js"></script>
+	<script src="http://github.com/vincentbluff/Tabs/raw/master/Source/Tabs.js"></script>
 	<title>vincentbluff/Tabs @ GitHub</title>
 	
 	<style type="text/css">
@@ -29,6 +31,79 @@
 		pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+    
+     #tabs {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#tabs {
+		position:relative;
+		width:300px;
+		height:200px;
+		overflow:hidden;
+	}
+	
+	.tabs_title {
+		list-style-image: none;
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		height: 24px;
+	}
+	
+	.tabs_title li {
+		float: left;
+		background-color: #3975BD;
+		padding: 2px 8px 2px 8px;
+		margin-right: 2px;
+		cursor: pointer;
+		color: #fff;
+		font-family: "Trebuchet MS";
+		font-size: 12px;
+		height: 24px;
+		line-height: 24px;
+	}
+	
+	.tabs_title a {
+		text-decoration:none;
+		color: #fff;
+	}
+	
+	.tabs_title li.over {
+		font-weight: bold;
+	}
+	
+	.tabs_title li.active {
+		background-color: #49A8EC;
+	}
+	
+	.tabs_panelwrap {
+		position: absolute;
+		top:28px;
+		overflow: hidden;
+		width:300px;
+		height:172px;
+	}
+	
+	.tabs_panel {
+		/*position:absolute;
+		top:28px;*/
+		width:300px;
+		height:172px;
+		display:none;
+		overflow: auto;
+		background-color: #49A8EC;
+		color: #fff;
+		clear: both;
+	}
+	
+	.tabs_panel.active {
+		display: block;
+	}
+	
+	.tabs_panel p {
+		margin-left:5px;
+	}
 	</style>
 	
 </head>
@@ -49,13 +124,53 @@
       <span class="small">by <a href="http://github.com/vincentbluff">vincentbluff</a></span></h1>
 
     <div class="description">
-      
+      A MooTools class for making a tabbed box.
     </div>
+    
+    <h2>Demo</h2>
+    <div id="tabs">
+
+		<!-- tab headings -->
+
+		<ul class="tabs_title">
+			<li title="my_work">My Work</li>
+			<li title="about_me">About Me</li>
+
+			<li title="contact">Contact</li>
+		</ul>
+
+			
+		<!-- Tab1 content -->
+
+		<div id="my_work" class="tabs_panel">
+			<h1>Tab 1</h1>
+			
+			<p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p>
+		</div>
+
+		<!-- Tab2 content -->
+
+		<div id="about_me" class="tabs_panel">
+			<h1>Tab 2</h1>
+			<p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p>
+		</div>
+			
+		<!-- Tab3 content -->
+
+		<div id="contact" class="tabs_panel">
+			<h1>Tab 3</h1>
+			<p>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p>
+		</div>
+	
+	</div>
 
     <h2>Authors</h2>
-<p>vincentbluff (shaun@shaunfreeman.co.uk)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Shaun Freeman (shaun@shaunfreeman.co.uk)<br/>      </p>
+	<p>vincentbluff (shaun@shaunfreeman.co.uk)
+	<br/>
+	<br/>      </p>
+	<h2>Contact</h2>
+	<p>Shaun Freeman (shaun@shaunfreeman.co.uk)
+	<br/>      </p>
 
 
     <h2>Download</h2>
