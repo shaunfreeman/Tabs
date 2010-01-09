@@ -41,8 +41,6 @@ var Tabs = new Class({
 		
 		this.attach(this.tabs);
 		
-		this.now = 0;
-		
 		if($type(this.options.elementSwapOptions.activateOnLoad) == 'number') {
 			this.activateTab(this.options.elementSwapOptions.activateOnLoad);
 		}
