@@ -31,6 +31,8 @@ var Tabs = new Class({
 		onActive: $empty,
 		onBackground: $empty
 	},
+	
+	now: 0,
 		
 	initialize: function(options) {
 		this.setOptions(options);
