@@ -31,8 +31,6 @@ var Tabs = new Class({
 		onActive: $empty,
 		onBackground: $empty
 	},
-	
-	now: 0,
 		
 	initialize: function(options) {
 		this.setOptions(options);
@@ -42,6 +40,8 @@ var Tabs = new Class({
 		this.getSwap();
 		
 		this.attach(this.tabs);
+		
+		this.now = 0;
 		
 		if($type(this.options.elementSwapOptions.activateOnLoad) == 'number') {
 			this.activateTab(this.options.elementSwapOptions.activateOnLoad);
